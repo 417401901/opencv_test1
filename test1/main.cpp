@@ -3,6 +3,6 @@
 int main()
 {
 	while (1)
-		mainContours(imread("fruit.jpg"));
+		mainConvex(imread("hand.jpg"));
 	return 0;
 }

@@ -12,5 +12,6 @@ int mainHough(cv::InputOutputArray mat);
 void mainRemap(cv::InputArray mat);
 void mianHistogram(cv::InputArray mat);
 void mainContours(cv::InputArray mat);
+void mainConvex(cv::InputArray mat);
 
 #endif // TEST

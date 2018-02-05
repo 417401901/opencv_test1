@@ -123,6 +123,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Contours.cpp" />
+    <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Histogram.cpp" />
     <ClCompile Include="Hough.cpp" />
