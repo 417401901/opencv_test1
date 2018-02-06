@@ -33,22 +33,40 @@ void mainConvex(cv::InputArray mat)
 		convexHull(Mat(Contours[i]), hulls[i], false);
 		convexityDefects(Mat(Contours[i]), hulls[i], defects[i]);
 	}
+	vector<Moments> mu(Contours.size());
+	vector<Point2f> mo(Contours.size());
 	for (int i = 0; i < Contours.size(); i++)
 	{
 		drawContours(srcImage, Contours, i, Scalar(255, 0, 0), 1, 8);
 		drawContours(srcImage, hull, i, Scalar(0, 255, 255), 1, 8);
+		mu[i] = moments(Contours[i], false);
+		mo[i].x = static_cast<float> (mu[i].m10 / mu[i].m00);
+		mo[i].y = static_cast<float> (mu[i].m01 / mu[i].m00);
 		vector<Vec4i> ::iterator d = defects[i].begin();
+		circle(srcImage, mo[i], 2, Scalar(125, 125, 0), -1, 8);
+		
 		while (d != defects[i].end())
 		{
 			Vec4i &hh = (*d);
+			cout << hh[3] << endl;
 			Point start = Contours[i][hh[0]];
 			Point end = Contours[i][hh[1]];
 			Point far = Contours[i][hh[2]];
-			line(srcImage, start, far, Scalar(0, 0, 255), 2, 8);
-			line(srcImage, far, end, Scalar(0, 0, 255), 2, 8);
-			circle(srcImage, start, 4, Scalar(0, 255, 0), 1, 8);
+			if (hh[3] > 1000)
+			{
+				line(srcImage, start, far, Scalar(0, 0, 255), 2, 8);
+				line(srcImage, far, end, Scalar(0, 0, 255), 2, 8);
+				circle(srcImage, far, 4, Scalar(0, 255, 0), 1, 8);
+				circle(srcImage, start, 4, Scalar(0, 255, 0), 1, 8);
+				circle(srcImage, end, 4, Scalar(0, 255, 0), 1, 8);
+			}
 			d++;
 		}
+	}
+	
+	for (int i = 0; i < Contours.size(); i++)
+	{
+		cout << "第" << i << "个轮廓的长度：" << arcLength(Contours[i], true) << "轮廓面积：" << mu[i].m00 << endl;
 	}
 	imshow("dst", srcImage);
 	waitKey();
