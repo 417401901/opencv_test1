@@ -3,6 +3,6 @@
 int main()
 {
 	while (1)
-		mainConvex(imread("hand.jpg"));
+		mainWatershed(imread("coin.png"));
 	return 0;
 }

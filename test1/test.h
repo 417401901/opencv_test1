@@ -13,5 +13,6 @@ void mainRemap(cv::InputArray mat);
 void mianHistogram(cv::InputArray mat);
 void mainContours(cv::InputArray mat);
 void mainConvex(cv::InputArray mat);
+void mainWatershed(cv::OutputArray& mat);
 
 #endif // TEST

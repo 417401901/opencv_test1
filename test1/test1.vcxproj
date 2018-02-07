@@ -127,9 +127,11 @@
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Histogram.cpp" />
     <ClCompile Include="Hough.cpp" />
+    <ClCompile Include="inpaint.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="remap.cpp" />
     <ClCompile Include="test_ChangSize.cpp" />
+    <ClCompile Include="watershed.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h" />
