@@ -3,6 +3,6 @@
 int main()
 {
 	while (1)
-		mainWatershed(imread("coin.png"));
+		mianHistogram(imread("sss.jpg"));
 	return 0;
 }
