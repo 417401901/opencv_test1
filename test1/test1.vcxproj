@@ -125,6 +125,8 @@
     <ClCompile Include="Contours.cpp" />
     <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="Edge.cpp" />
+    <ClCompile Include="Harriatest.cpp" />
+    <ClCompile Include="histCompate.cpp" />
     <ClCompile Include="Histogram.cpp" />
     <ClCompile Include="Hough.cpp" />
     <ClCompile Include="inpaint.cpp" />

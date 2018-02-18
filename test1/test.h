@@ -14,5 +14,7 @@ void mianHistogram(cv::InputArray mat);
 void mainContours(cv::InputArray mat);
 void mainConvex(cv::InputArray mat);
 void mainWatershed(cv::OutputArray& mat);
+void mainHistCompate(cv::InputArray mat1, cv::InputArray mat2);
+int mainHarria(cv::InputArray mat);
 
 #endif // TEST

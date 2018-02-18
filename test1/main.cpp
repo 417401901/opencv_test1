@@ -1,8 +1,9 @@
 #include "test.h"
 
 int main()
+
 {
 	while (1)
-		mianHistogram(imread("sss.jpg"));
+		mainHarria(imread("jump.jpg"));
 	return 0;
 }
